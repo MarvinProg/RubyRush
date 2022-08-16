@@ -26,11 +26,33 @@ def check_result(user_letter, letters, good_letters, bad_letters)
     0
   end
 
-  if letters.include?(user_letter)
+  if letters.include?(user_letter) || 
+    (user_letter == 'е' && letters.include?('ё')) ||
+    (user_letter == 'ё' && letters.include?('е')) ||
+    (user_letter == 'и' && letters.include?('й')) ||
+    (user_letter == 'й' && letters.include?('и'))
+
     good_letters << user_letter
+
+    if user_letter == 'е'
+      good_letters << 'ё'
+    end
+
+    if user_letter == 'ё'
+      good_letters << 'е'
+    end
+
+    if user_letter == 'и'
+      good_letters << 'й'
+    end
+
+    if user_letter == 'й'
+      good_letters << 'и'
+    end
     
     # if letters.uniq.size == good_letters.size
-    if letters.uniq.sort == good_letters.sort
+    # if letters.uniq.sort == good_letters.sort
+    if (letters - good_letters).empty?
       1
     else 
       0

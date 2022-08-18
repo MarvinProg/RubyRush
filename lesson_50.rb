@@ -14,6 +14,3 @@ when "Шерлок Холмс"
 else 
   puts "Please, enter hero"
 end
-
-
-

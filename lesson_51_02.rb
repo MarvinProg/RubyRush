@@ -16,4 +16,4 @@ end
 film_random = list_film.sample 
 puts "Recomend film: #{film_random.title}"
 puts "Produsser: #{film_random.name_produser}"
-# puts film_random.class
+puts film_random.class

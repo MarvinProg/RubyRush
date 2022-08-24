@@ -9,11 +9,14 @@ password_user = STDIN.noecho(&:gets).chomp
 puts "Enter email another person: "
 person_email = STDIN.gets.chomp 
 
+puts "Enter subject email: "
+subject = STDIN.gets.chomp 
+
 puts "Enter text email: "
 text_email = STDIN.gets.chomp 
 
 Pony.mail({
-  :subject => "Ruby cool!", 
+  :subject => subject, 
   :body => text_email, 
   :to => person_email, 
   :from => my_email, 

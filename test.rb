@@ -39,18 +39,28 @@
 
 
 # Есть хеш, где каждой букве алфавита соответствует цифра. Нужно сделать так, чтобы буквы превращались в цифры. Например я пишу какое-либо предложение, а мне возвращается  набор цифр.
-puts "Enter number: "
-user_letters = STDIN.gets.chomp
+# puts "Enter number: "
+# user_letters = STDIN.gets.chomp
 
-word_and_number = {
-  a: -1,
-  b: -2,
-  c: -3,
-  d: -4, 
-  " " => -100,
-  "," => -101
-}
+# word_and_number = {
+#   a: -1,
+#   b: -2,
+#   c: -3,
+#   d: -4, 
+#   " " => -100,
+#   "," => -101
+# }
 
+require 'net/http'
+
+uri = "https://ru.wiktionary.org/wiki/" + URI.encode_www_form_component("аыдпьмадьмжаыуб") 
+wiktionary_page = Net::HTTP.get(URI(uri)).force_encoding('UTF-8')
+
+if /В настоящий момент текст на данной странице отсутствует/ =~ wiktionary_page
+  puts true 
+else
+  puts false
+end
 
 
 

@@ -51,17 +51,28 @@
 #   "," => -101
 # }
 
-require 'net/http'
+# =========================================================================
 
-uri = "https://ru.wiktionary.org/wiki/" + URI.encode_www_form_component("аыдпьмадьмжаыуб") 
-wiktionary_page = Net::HTTP.get(URI(uri)).force_encoding('UTF-8')
+# require 'net/http'
 
-if /В настоящий момент текст на данной странице отсутствует/ =~ wiktionary_page
-  puts true 
-else
-  puts false
-end
+# uri = "https://ru.wiktionary.org/wiki/" + URI.encode_www_form_component("аыдпьмадьмжаыуб") 
+# wiktionary_page = Net::HTTP.get(URI(uri)).force_encoding('UTF-8')
+
+# if /В настоящий момент текст на данной странице отсутствует/ =~ wiktionary_page
+#   puts true 
+# else
+#   puts false
+# end
+
+# =========================================================================
+
+# string = "One #Two,    #Three"
+# arr = string.scan(/#[a-zA-ZА-Яа-яЁё0-9_-]+/)
+
+# puts arr.inspect
 
 
+# Какие есть адекватные способы получить случайное число определённой длинны? (20 символов)
+# Array.new(20) { rand(0..9) }.join
 
 

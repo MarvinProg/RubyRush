@@ -5,13 +5,15 @@ class PrintResult
     counter = 0
     while counter <= 7 do 
       file_name = current_path + "/lesson_57_image_#{counter}.txt"
-      if File.exist?(file_name)
+
+      begin
         file = File.new(file_name, "r")
         @status_image << file.read
         file.close
-      else 
-        @status_image << "\n [ Изображение не найдено ] \n"
+      rescue SystemCallError 
+        @status_image << "\n [ Image not found. ] \n"
       end
+
       counter += 1
     end
   end

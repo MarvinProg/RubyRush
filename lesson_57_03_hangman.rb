@@ -1,8 +1,14 @@
-current_path = "./" + File.dirname(__FILE__)
+# current_path = "./" + File.dirname(__FILE__)
 
-require current_path + "/lesson_57_01_print_result.rb"
-require current_path + "/lesson_57_02_game_hangman.rb"
-require current_path + "/lesson_57_word_reader.rb"
+# require current_path + "/lesson_57_01_print_result.rb"
+# require current_path + "/lesson_57_02_game_hangman.rb"
+# require current_path + "/lesson_57_word_reader.rb"
+
+require_relative "lesson_57_01_print_result.rb"
+require_relative "lesson_57_02_game_hangman.rb"
+require_relative "lesson_57_word_reader.rb"
+
+current_path = File.dirname(__FILE__)
 
 reader = WordReader.new
 

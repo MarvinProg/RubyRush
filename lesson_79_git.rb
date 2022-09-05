@@ -1,1 +1,1 @@
-puts rand(2)
+puts rand(3)

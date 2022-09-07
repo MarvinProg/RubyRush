@@ -76,14 +76,24 @@
 # Array.new(20) { rand(0..9) }.join
 
 
-GC.start
-before = GC.stat(:total_freed_objects)
+# GC.start
+# before = GC.stat(:total_freed_objects)
 
-RETAINED = []
-100_000.times do
-  RETAINED << "a string".freeze
+# RETAINED = []
+# 100_000.times do
+#   RETAINED << "a string".freeze
+# end
+
+# GC.start
+# after = GC.stat(:total_freed_objects)
+# puts "Objects Freed: #{after - before}"
+
+@hh = {}
+
+def method_1(key, value)
+  @hh[key] = value
 end
 
-GC.start
-after = GC.stat(:total_freed_objects)
-puts "Objects Freed: #{after - before}"
+method_1(:a, 1)
+
+puts @hh

@@ -88,12 +88,23 @@
 # after = GC.stat(:total_freed_objects)
 # puts "Objects Freed: #{after - before}"
 
-@hh = {}
 
-def method_1(key, value)
-  @hh[key] = value
+
+# @hh = {}
+
+# def method_1(key, value)
+#   @hh[key] = value
+# end
+
+# method_1(:a, 1)
+
+# puts @hh
+
+
+name = "Artem"
+
+def name.spacify
+  self.split('').join(' ')
 end
-
-method_1(:a, 1)
-
-puts @hh
+puts name.spacify
+puts "Ivan".spacify

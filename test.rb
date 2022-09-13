@@ -101,10 +101,11 @@
 # puts @hh
 
 
-name = "Artem"
+# name = "Artem"
 
-def name.spacify
-  self.split('').join(' ')
-end
-puts name.spacify
-puts "Ivan".spacify
+# def name.spacify
+#   self.split('').join(' ')
+# end
+# puts name.spacify
+# puts "Ivan".spacify
+

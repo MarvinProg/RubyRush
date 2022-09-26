@@ -6,7 +6,11 @@ class Link < Post
   end
 
   def read_from_console
+    puts "Address link: "
+    @url = STDIN.gets.chomp 
 
+    puts "About link: "
+    @text = STDIN.gets.chomp 
   end
 
   def to_strings 

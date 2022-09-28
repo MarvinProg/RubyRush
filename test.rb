@@ -109,3 +109,9 @@
 # puts name.spacify
 # puts "Ivan".spacify
 
+a = "123afsd"
+
+if a 
+  puts "Odin"
+end
+

@@ -1,5 +1,5 @@
 class Product 
-  attr_reader :price, :count
+  attr_accessor :price, :count
 
   def initialize(params)
     @price = params[:price] 
@@ -9,34 +9,59 @@ class Product
   def information 
     "Product -> price: #{@price}, count: #{count}"
   end
+
+  def update(params)
+    @price = params[:price] if params[:price]
+    @count = params[:count] if params[:count]
+  end 
 end
 
 class Book < Product
-  attr_reader :name_book, :genre
+  attr_accessor :name_book, :genre
 
   def initialize(params)
     super
-    @name_book = name_book
-    @genre = genre
+
+    @name_book = params[:name_book]
+    @genre = params[:genre]
   end 
 
   def information 
     "Book -> price: #{@price}, count: #{count}, "
   end
+
+  def update(params)
+    super 
+
+    @name_book = params[:name_book] if params[:name_book]
+    @genre = params[:genre] if params[:genre]
+  end
 end 
 
 class Film < Product
-  attr_reader :name_film, :year_film, :produser
+  attr_accessor :name_film, :year_film, :produser
 
   def initialize(params)
     super
-    @name_film = name_film 
-    @year_film = year_film
-    @produser = produser
+
+    @name_film = params[:name_film]
+    @year_film = params[:year_film]
+    @produser = params[:produser]
   end
 
   def information 
     "Film -> price: #{@price}, count: #{count}, name_film: #{@name_film}, year_film: #{@year_film}, produser: #{@produser}"
+  end
+
+  def update(params)
+    super 
+
+    @name_film = params[:name_film] if params[:name_film]
+    # @year_film = params[:year_film] if params[:year_film]
+    if params[:year_film]
+      @year_film = params[:year_film] 
+    end
+    @produser = params[:produser] if params[:produser]
   end
 
   # def name 
@@ -60,3 +85,15 @@ puts "List products: "
 array.each do |obj|
   puts obj.information
 end
+
+puts "===== " * 3
+
+film_1 = Film.new(price: 33, count: 1, name_film: "Superman", year_film: 2013, produser: "Zak")
+film_1.count = 7
+puts film_1.information
+
+puts "===== " * 3
+
+film_1 = Film.new(price: 33, count: 1, name_film: "Superman", year_film: 2013, produser: "Zak")
+film_1.update(count: 5, year_film: 1998)
+puts film_1.information

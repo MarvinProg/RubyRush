@@ -112,6 +112,18 @@ class Film < Product
   end
 end
 
+# class ProductCollection 
+#   def initialize(products = [])
+#     @products = products
+#   end
+
+#   def self.from_dir 
+#     products = []
+#   end
+
+#   end
+# end
+
 current_path = File.dirname(__FILE__)
 film = Film.from_file(current_path + "/lesson_103_film.txt")
 book = Film.from_file(current_path + "/lesson_103_book.txt")

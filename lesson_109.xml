@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<expenses>
+  <expense date='2.02.1992' category='Education' amount='333'>
+     Book 
+  </expense>
+  <expense date='14.06.1996' category='Transport' amount='33453'>
+     Car 
+  </expense>
+  <expense date='29.11.1994' category='Sport' amount='243'>
+     Travel 
+  </expense>
+  <expenses amount='33434' category='sgsgsg' date=''/>
+</expenses>

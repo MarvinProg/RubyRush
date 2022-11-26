@@ -109,9 +109,27 @@
 # puts name.spacify
 # puts "Ivan".spacify
 
-a = "123afsd"
+# a = "123afsd"
 
-if a 
-  puts "Odin"
-end
+# if a 
+#   puts "Odin"
+# end
+
+
+
+
+# ===========
+
+# a = true
+
+# if !a || true 
+#   puts "a"
+# end
+
+
+
+require 'json'
+
+my_hash = {:hello => "goodbye"}
+puts JSON.generate(my_hash) => "{\"hello\":\"goodbye\"}"
 
